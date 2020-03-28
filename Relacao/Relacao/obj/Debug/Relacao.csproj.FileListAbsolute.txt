@@ -1,0 +1,14 @@
+C:\Users\Gabriel\source\repos\Relacao\Relacao\bin\Debug\Relacao.exe.config
+C:\Users\Gabriel\source\repos\Relacao\Relacao\bin\Debug\Relacao.exe
+C:\Users\Gabriel\source\repos\Relacao\Relacao\bin\Debug\Relacao.pdb
+C:\Users\Gabriel\source\repos\Relacao\Relacao\obj\Debug\Relacao.csprojAssemblyReference.cache
+C:\Users\Gabriel\source\repos\Relacao\Relacao\obj\Debug\Relacao.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\Relacao\Relacao\obj\Debug\Relacao.exe
+C:\Users\Gabriel\source\repos\Relacao\Relacao\obj\Debug\Relacao.pdb
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\bin\Debug\Relacao.exe.config
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\bin\Debug\Relacao.exe
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\bin\Debug\Relacao.pdb
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\obj\Debug\Relacao.csprojAssemblyReference.cache
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\obj\Debug\Relacao.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\obj\Debug\Relacao.exe
+C:\Users\gabri\Desktop\Programas\Relacao\Relacao\obj\Debug\Relacao.pdb

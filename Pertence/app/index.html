@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <script src="app.js"></script>
+
+    <title>Lista de Aprovados e Reprovados</title>
+</head>
+
+<body ng-controller="AlunosController">
+
+    <h1 class="text-center">Cadastro de Alunos</h1>
+    <div class="col-sm-12">
+
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="aluno.nome" placeholder="Nome do Aluno">
+        </div>
+        <div class="col-sm-3">
+                <button class="btn btn-success btn-block" ng-click="InserirAluno(aluno)">Inserir</button>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="aluno.aprovado">
+                    <label class="label label-success" ng-show="aluno.aprovado">Aprovado</label>
+                    <label class="label label-danger"ng-show="!aluno.aprovado">Reprovado</label>
+                </label>
+            </div>
+
+        </div>
+      
+    </div>
+
+
+    <div class="col-sm-12">
+    <div class="col-sm-4">
+        <table class="table table-responsive table-hover panel-footer">
+            <th>Alunos</th>
+            <th>Filtrar: <input type="text" name="a" id="a" class="form-control" ng-model="filtro"></th>
+            <tr ng-repeat="aluno in alunos| filter:filtro" class="default">
+                <td><b>{{aluno.nome}}</b></td>
+                <td><button class="btn" ng-class="{'btn-success btn-block':aluno.aprovado==false,'btn-danger btn-block':aluno.aprovado==true}" ng-click="alterarAprovacao(aluno)"><span
+                            ng-show="aluno.aprovado==true">  :( Reprovar</span><span
+                            ng-show="aluno.aprovado==false"> :) Aprovar</span></button>
+                        <!--Dependendo do valor aparece um botão caso aprovado aparece o botão reprovar e vice-versa -->
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- Tabela de Reprovados -->
+    <div class="col-sm-4">
+            <table class="table table-responsive table-hover panel-footer">
+                    <th>Alunos Reprovados</th>
+                    <th>Filtrar Reprovados: <input type="text" name="a" id="a" style="color:red" class="form-control" ng-model="filtroReprovado"></th>
+                    <tr ng-repeat="aluno in alunos| filter:filtroReprovado" class="danger">
+                        <td colspan="2" ng-show="aluno.aprovado==false">{{aluno.nome}}</td>
+                        <!-- Através dessa expressão aluno.aprovado==false, ela verifica se o aluno pertence aos alunos aprovados caso não pertenca logo é reprovado -->
+                    </tr>
+                </table>
+    </div>
+    <div class="col-sm-4">
+            <table class="table table-responsive table-hover panel-footer ">
+                    <th>Alunos Aprovados</th>
+                    <th>Filtrar Aprovados: <input type="text" name="a" id="a" class="form-control" style="color:green" ng-model="filtroAprovado"></th>
+                    <tr ng-repeat="aluno in alunos| filter:filtroAprovado" class="success">
+                            <td colspan="2" ng-show="aluno.aprovado==true">{{aluno.nome}}</td>
+                        <!-- Através dessa expressão aluno.aprovado==true, ela verifica se o aluno pertence aos alunos aprovados caso sim é aprovado-->
+
+                    </tr>
+                </table>
+    </div>
+</div>
+</body>
+
+</html>
